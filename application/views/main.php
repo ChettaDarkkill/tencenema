@@ -23,6 +23,9 @@
         <div class="carousel-inner">
             <div class="item active">
                     <ul class="thumbnails">
+                    	<?php 
+                    		foreach ($movie_detail as $key => $value) {
+                    	?>
                         <li class="col-sm-3">
     						<div class="fff">
 								<div class="thumbnail">
@@ -36,45 +39,7 @@
 								</div>
                             </div>
                         </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/fa.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Cha-Lui-Tae-Kho</h4>
-									<h5>ฉลุยแตะขอบฟ้า</h5>
-									<p>วันที่เข้าฉาย: 22/05/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/jirasic.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Jurassic World</h4>
-									<h5>จูราสสิค เวิลด์</h5>
-									<p> วันที่เข้าฉาย: 11/06/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/sanandress.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4> San Andreas</h4>
-									<h5>มหาวินาศแผ่นดินแยก</h5>
-									<p> วันที่เข้าฉาย: 28/05/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
+                        <?php }?>
                     </ul>
               </div><!-- /Slide1 --> 
             <div class="item">
