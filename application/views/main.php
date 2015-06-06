@@ -18,154 +18,37 @@
 			</div>
 		</div>
     </div>
-        
-    <div class="carousel slide" id="myCarousel">
-        <div class="carousel-inner">
-            <div class="item active">
-                    <ul class="thumbnails">
+                    <ul class="thumbnails" style = 'margin-buttom:100px!important'>
                     	<?php 
                     		foreach ($movie_detail as $key => $value) {
+                    		if($key%4==0)
+                        	{
+                        		echo '<br/>';
+                        	}
                     	?>
                         <li class="col-sm-3">
     						<div class="fff">
 								<div class="thumbnail">
-									<a href="index.php/booking/get_booking/1"><img src="assets/img/pahap.jpg" alt=""></a>
+									<a href="index.php/booking/get_booking/<?php echo $value['id'];?>"><img src="assets/img/<?php echo $value['pic'];?>" alt=""></a>
 								</div>
 								<div class="caption">
-									<h4>Pa-Happy</h4>
-									<h5>ป้าแฮปปี้ SHE ท่าเยอ</h5>
-									<p>วันที่เข้าฉาย: 21/05/15</p>
+									<h4><?php echo $value['en_name'];?></h4>
+									<h5><?php echo $value['th_name'];?></h5>
+									<p>วันที่เข้าฉาย: <?php echo $value['date_show'];?></p>
 									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
 								</div>
                             </div>
                         </li>
                         <?php }?>
                     </ul>
-              </div><!-- /Slide1 --> 
-            <div class="item">
-                    <ul class="thumbnails">
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/to.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Kruato</h4>
-									<h5>ขรัวโต</h5>
-									<p> วันที่เข้าฉาย: 28/05/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/spy.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Spy</h4>
-									<h5>สปาย</h5>
-									<p> วันที่เข้าฉาย: 04/06/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/soft.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Soft Lad</h4>
-									<h5>Soft Lad</h5>
-									<p> วันที่เข้าฉาย: 11/06/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/fri.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>My Fair Wedding</h4>
-									<h5>My Fair Wedding</h5>
-									<p> วันที่เข้าฉาย: 08/06/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                    </ul>
-              </div><!-- /Slide2 --> 
-            <div class="item">
-                    <ul class="thumbnails">
-                        <li class="col-sm-3">	
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/yes.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Yes or No 2.5</h4>
-									<h5>กลับมา เพื่อรักเธอ</h5>
-									<p> วันที่เข้าฉาย: 28/05/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/dil.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Dil Dhadakne Do</h4>
-									<h5>Dil Dhadakne Do</h5>
-									<p> วันที่เข้าฉาย: 05/06/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff"> 
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/mad.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Mad Max</h4>
-									<h5>แมดแม็กซ์ ถนนโลกันตร</h5>
-									<p> วันที่เข้าฉาย: 14/05/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="assets/img/tomor.jpg" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Tomorrowland</h4>
-									<h5>ผจญแดนอนาคต</h5>
-									<p> วันที่เข้าฉาย: 21/05/15</p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
-								</div>
-                            </div>
-                        </li>
-                    </ul>
-              </div><!-- /Slide3 --> 
-        </div>
-        
-       
 	   <nav>
-			<ul class="control-box pager">
+			<!-- <ul class="control-box pager">
 				<li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
 				<li><a data-slide="next" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
-			</ul>
+			</ul> -->
 		</nav>
 	   <!-- /.control-box -->   
                               
-    </div><!-- /#myCarousel -->
         
 </div><!-- /.col-xs-12 -->          
 
