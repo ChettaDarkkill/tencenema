@@ -1,5 +1,13 @@
 <div class = "container" style = 'width:600px!important'>
-<h2>เลือกที่นั่งที่ต้องการ</h2>
+ <center>
+	<div class="thumbnail">
+	  <img src="assets/img/<?php echo $movies[0]['pic'];?>" alt="" width='170px'>
+	  <h3><b><?php echo $movies[0]['name_en'];?></b></h3>
+	  <p><b><?php echo $movies[0]['name_th'];?></b></p>
+	</div>
+  <button style = 'width:100%!important'type="button" class="btn btn-default btn-round-lg btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หน้าจอ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></center>
+   <br/>
+   <center>
  <?php 
  $char="A";
  $j = 0;
@@ -12,7 +20,7 @@
  ?>
 	<span class="button-checkbox">
 	    <button type="button" class="btn" data-color="primary"><?php echo $j;?></button>
-	    <input type="checkbox" name = '<?php echo $char.$j ;?>' class="hidden" />
+	    <input type="checkbox" name = 'room[]' value = '<?php echo $char.$j ;?>' class="hidden" />
 	</span>
  <?php 
   if($i%8==0)
@@ -20,9 +28,14 @@
  	$j=0;
  	$char++;
   }
-} ?>
+} ?><br/><br/>
+      <input type = 'submit' class="btn btn-primary btn-round-lg btn-lg" value= 'จอง'/>
+      <a class="btn btn-default btn-round-lg btn-lg" href = 'index.php/main'>ยกเลิก</a>
+    <br/><br/>
 </div>
+</center>
 <div class = 'container'>
+
 </div>
 
 <script>
@@ -95,6 +108,20 @@ $(function () {
 <style>
 /* Global */
  
+.btn-round-lg{
+border-radius: 22.5px;
+}
+.btn-round{
+border-radius: 17px;
+}
+.btn-round-sm{
+border-radius: 15px;
+}
+.btn-round-xs{
+border-radius: 11px;
+padding-left: 10px;
+padding-right: 10px;
+}
 
 img { max-width:100%; }
 

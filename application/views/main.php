@@ -2,22 +2,21 @@
 <br/><br/>
 <div class="container">
 <div class="col-xs-12">
-
-    <div class="page-header">
-        <div class = "container">
-        	<div class="row">
-			  <div class="col-md-3">
-			  	<a href="#"><img src="assets/img/banner2.jpg" alt=""></a>
-			  </div>
-			  <div class="col-md-9">
-			  	<h3><b>Wellcome! ยินดีต้อนรับ</b></h3>
-				<h5><b>ลงชื่อเข้าใช้เรียบร้อยแล้ว</b></h5>
-				<a class = 'btn btn-danger' href = "index.php/login/logout">Logout</a>
-				<span>ยินดีต้อนรับคุณ &nbsp;&nbsp; </span><span style = "color : green;"><?php echo $this->session->userdata('logged_in')['fname'];?>!</span>
-			  </div>
-			</div>
-		</div>
-    </div>
+				<div class="page-header">
+				    <div class = "container">
+				    	<div class="row">
+						  <div class="col-md-3">
+						  	<a href="#"><img src="assets/img/banner2.jpg" alt=""></a>
+						  </div>
+						  <div class="col-md-9">
+						  	<h3><b>Wellcome! ยินดีต้อนรับ</b></h3>
+							<h5><b>ลงชื่อเข้าใช้เรียบร้อยแล้ว</b></h5>
+							<a class = 'btn btn-danger' href = "index.php/login/logout">Logout</a>
+							<span>ยินดีต้อนรับคุณ &nbsp;&nbsp; </span><span style = "color : green;"><?php echo $this->session->userdata('logged_in')['fname'];?>!</span>
+						  </div>
+						</div>
+					</div>
+				</div>
                     <ul class="thumbnails" style = 'margin-buttom:100px!important'>
                     	<?php 
                     		foreach ($movie_detail as $key => $value) {
@@ -26,30 +25,27 @@
                         		echo '<br/>';
                         	}
                     	?>
+                    	<style>
+                    		.jj{
+                    			height: 250px!important;
+    							width: 200px!important;
+                    		}
+                    	</style>
                         <li class="col-sm-3">
     						<div class="fff">
 								<div class="thumbnail">
-									<a href="index.php/booking/get_booking/<?php echo $value['id'];?>"><img src="assets/img/<?php echo $value['pic'];?>" alt=""></a>
+									<a href="index.php/booking/get_booking/<?php echo $value['id'];?>"><img class = 'jj' src="assets/img/<?php echo $value['pic'];?>" alt=""></a>
 								</div>
 								<div class="caption">
 									<h4><?php echo $value['name_en'];?></h4>
 									<h5><?php echo $value['name_th'];?></h5>
 									<p>วันที่เข้าฉาย: <?php echo $value['date_show'];?></p>
-									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
+									<a class="btn btn-mini" href="index.php/booking/get_booking/<?php echo $value['id'];?>">» จองที่นั่ง</a>
 								</div>
                             </div>
                         </li>
                         <?php }?>
-                    </ul>
-	   <nav>
-			<!-- <ul class="control-box pager">
-				<li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
-				<li><a data-slide="next" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
-			</ul> -->
-		</nav>
-	   <!-- /.control-box -->   
-                              
-        
+                    </ul>        
 </div><!-- /.col-xs-12 -->          
 
 </div><!-- /.container -->
