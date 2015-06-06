@@ -29,4 +29,15 @@ class m_booking extends CI_Model
         $result = $result->result_array();
         return $result ; 
 	}
+	public function get_movie_history_booking() 
+	{
+		$user_id =  $this->session->userdata('logged_in')['id'];
+		$sql  = "
+		      select * from booking a 
+		      left join movies b on a.fk_movies_id = b.id
+		      where fk_user_id = $user_id";
+        $result = $this->db->query($sql);
+        $result = $result->result_array();
+        return $result ; 
+	}
 }

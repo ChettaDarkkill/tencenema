@@ -1,3 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">ประวัติการจองหนัง</h4>
+      </div>
+      <div class="modal-body">
+
+         <table class="table table-bordered">
+            <tr>
+                <th>ลำดับ</th>
+                <th>เรื่อง</th>
+                <th>ที่นั่ง</th>
+                <th>วันที่จอง</th>
+            </tr>
+        <?php 
+           $count=0;
+         foreach($history as $key => $row) {
+            $count++;
+         ?>
+            <tr>
+                <td><?php echo  $count;?></td>
+                <td><?php echo  $row['name_th'];?></td>
+                <td><?php echo  $row['seatzone'];?></td>
+                <td><?php echo  $row['cdate'];?></td>
+            </tr>
+         <?php }?>
+        </table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ปิด</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <br/><br/>
 <div class="container">
@@ -11,12 +49,14 @@
 						  <div class="col-md-9">
 						  	<h3><b>Wellcome! ยินดีต้อนรับ</b></h3>
 							<h5><b>ลงชื่อเข้าใช้เรียบร้อยแล้ว</b></h5>
+                            <a class = 'btn btn-success' data-toggle="modal" data-target="#myModal" id = 'history_booking'>ข้อมูลจองหนัง</a>
 							<a class = 'btn btn-danger' href = "index.php/login/logout">Logout</a>
 							<span>ยินดีต้อนรับคุณ &nbsp;&nbsp; </span><span style = "color : green;"><?php echo $this->session->userdata('logged_in')['fname'];?>!</span>
 						  </div>
 						</div>
 					</div>
 				</div>
+
                     <ul class="thumbnails" style = 'margin-buttom:100px!important'>
                     	<?php 
                     		foreach ($movie_detail as $key => $value) {
