@@ -11,7 +11,7 @@
  ?>
 	<span class="button-checkbox">
 	    <button type="button" class="btn" data-color="primary"><?php echo $j;?></button>
-	    <input type="checkbox" name = '<?php echo $char.$j ;?>' class="hidden" />
+	    <input type="checkbox" name = '<?php echo $char.$j ;?>' class="hidden" />ccc
 	</span>
  <?php 
   if($i%8==0)
