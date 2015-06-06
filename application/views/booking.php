@@ -1,3 +1,4 @@
+<form action = 'index.php/booking/save_booking/<?php echo $movies[0]['id'];?>' method = 'post'>
 <div class = "container" style = 'width:600px!important'>
  <center>
 	<div class="thumbnail">
@@ -17,10 +18,19 @@
   {
  	echo "<br/><h6><b>Zone : ".$char."</b></h6>";
   }
+  $data_check =  $char.$j;
+    if ( in_array($char.$j,$check) )
+    {
+      $chcek = 'checked';
+    }
+    else
+    {
+      $chcek = '';
+    }
  ?>
 	<span class="button-checkbox">
 	    <button type="button" class="btn" data-color="primary"><?php echo $j;?></button>
-	    <input type="checkbox" name = 'room[]' value = '<?php echo $char.$j ;?>' class="hidden" />
+	    <input type="checkbox" name = 'room[]' value = '<?php echo $char.$j ;?>' <?php echo $chcek;?>  class="hidden" />
 	</span>
  <?php 
   if($i%8==0)
@@ -33,6 +43,7 @@
       <a class="btn btn-default btn-round-lg btn-lg" href = 'index.php/main'>ยกเลิก</a>
     <br/><br/>
 </div>
+</form>
 </center>
 <div class = 'container'>
 
