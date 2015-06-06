@@ -29,6 +29,7 @@
 
 	<!-- My jqurey and css -->
 	<script src="assets/js/myscript.js"></script>
+	<script src="assets/validation/booking.js"></script>
 	<link rel="stylesheet" href="assets/css/mycss.css">
 
 </head>

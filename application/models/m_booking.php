@@ -2,11 +2,23 @@
 
 class m_booking extends CI_Model
 {
-	public function insert_booking($data)
+	public function insert_booking($data,$name7)
 	{
 		$this->db->set('cdate', 'NOW()', FALSE);
         $this->db->set('udate', 'NOW()', FALSE);
 		$this->db->insert('booking', $data); 
+
+		$insert_id = $this->db->insert_id();
+
+		   $data = array(
+				   'id' 		    => '',
+				   'fk_booking_id'  => $insert_id ,
+				   'status'         => 'complete',
+				   'price'          => $name7
+			  );
+		$this->db->set('cdate', 'NOW()', FALSE);
+        $this->db->set('udate', 'NOW()', FALSE);
+		$this->db->insert('payment', $data); 
 	}
 	public function get_movie_user_booking($id)
 	{

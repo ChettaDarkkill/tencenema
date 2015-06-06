@@ -1,4 +1,4 @@
-<form action = 'index.php/booking/save_booking/<?php echo $movies[0]['id'];?>' method = 'post'>
+<form id = 'my_booking' action = 'index.php/booking/save_booking/<?php echo $movies[0]['id'];?>' method = 'post'>
 <div class = "container" style = 'width:600px!important' >
  <center>
 	<div class="thumbnail">
@@ -33,7 +33,7 @@
  ?>
 	<span class="button-checkbox">
 	    <button type="button" <?php echo $dis; ?> class="btn" data-color="primary"><?php echo $j;?></button>
-	    <input type="checkbox" name = 'room[]' value = '<?php echo $char.$j ;?>' <?php echo $dis; ?> <?php echo $chcek;?>  class="hidden" />
+	    <input type="checkbox" id = 'room' name = 'room[]' value = '<?php echo $char.$j ;?>' <?php echo $dis; ?> <?php echo $chcek;?>  class="hidden" />
 	</span>
  <?php 
   if($i%8==0)
@@ -58,44 +58,42 @@
           <p>NOTE: คุณต้องจ่ายเงินก่อนจึงจะสามารถสำรองที่นั่งได้ ขอบคุณค่ะ.</p>
         <hr class="featurette-divider"></hr></div>
     </div>
-  
           <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
-          <form accept-charset="UTF-8" action="/" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="pk_bQQaTxnaZlzv4FnnuZ28LFHccVSaj" id="payment-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="PUT" /><input name="authenticity_token" type="hidden" value="qLZ9cScer7ZxqulsUWazw4x3cSEzv899SP/7ThPCOV8=" /></div>
             <br>
           <div class='form-row'>
               <div class='col-xs-12 form-group required'>
                 <label class='control-label'>Name on Card</label>
-                <input class='form-control' size='4' type='text'>
+                <input name = 'name1' class='form-control' size='4' type='text'>
               </div>
                     
             </div>
             <div class='form-row'>
               <div class='col-xs-12 form-group card required'>
                   <label class='control-label'>Card Number</label>
-                <input autocomplete='off' class='form-control card-number' size='20' type='text'>
+                <input name = 'name2' autocomplete='off' class='form-control card-number' size='20' type='text'>
               </div>
             </div>
              <div class='form-row'>
               <div class='col-xs-12 form-group card required'>
                 <label class='control-label'>Billing Address</label>
-                <input autocomplete='off' class='form-control' size='20' type='text'>
+                <input name = 'name3' autocomplete='off' class='form-control' size='20' type='text'>
               </div>
             </div>
             <div class='form-row'>
               <div class='col-xs-4 form-group cvc required'>
                 <label class='control-label'>CVC</label>
-                <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
+                <input name = 'name4' autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
               </div>
               <div class='col-xs-4 form-group expiration required'>
                 <label class='control-label'>Expiration</label>
-                <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
+                <input name = 'name5'  class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
               </div>
               <div class='col-xs-4 form-group expiration required'>
                 <label class='control-label'> </label>
-                <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
+                <input name = 'name6' class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
               </div>
             </div>
-    
+            <input type = 'hidden' id = 'name7' name = 'name7'/>
            
             <div class='form-row'>
               <div class='col-md-12 form-group'>
@@ -108,14 +106,11 @@
               </div>
             </div>
            <div class="jumbotron jumbotron-flat">
-    <div class="center"><small><b>Your total today:</b></small></div>
+           <div class="center"><small><b>Your total today:</b></small></div>
            <div class="paymentAmt">$100</div>
-           
-                     
-          
-        </div>
+              </div>
                 <button class='form-control btn btn-primary submit-button' type='submit'> ยืนยันการจ่ายเงินและสำรองที่นั่ง »</button>
-                
+                <a class='form-control btn btn-default submit-button' href = 'index.php/main'>ยกเลิก</a>
               </div>
             </div>
             
@@ -137,8 +132,13 @@
     $(document).ready(function(){
         $("#box2").hide();
         $("#btn_book").click(function(){
-        $("#box1").hide(200); 
-        $("#box2").show(200);   
+            $("#box1").hide(200); 
+            $("#box2").show(200);   
+            var numberOfChecked = $('input:checkbox:checked').length;
+            var mon  = '<?php echo $movies[0]['price'];?>';
+            var amount = (  mon * numberOfChecked);
+            $("#name7").val(mon);
+            $(".paymentAmt").text(amount+"฿");
         });
     });
 </script>
