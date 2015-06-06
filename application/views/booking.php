@@ -1,4 +1,5 @@
 <div class = "container" style = 'width:600px!important'>
+<h2>เลือกที่นั่งที่ต้องการ</h2>
  <?php 
  $char="A";
  $j = 0;
@@ -6,12 +7,12 @@
  $j++;
   if($i%8==1)
   {
- 	echo "<br/><h6><b>".$char."</b></h6>";
+ 	echo "<br/><h6><b>Zone : ".$char."</b></h6>";
   }
  ?>
 	<span class="button-checkbox">
 	    <button type="button" class="btn" data-color="primary"><?php echo $j;?></button>
-	    <input type="checkbox" name = '<?php echo $char.$j ;?>' class="hidden" />ccc
+	    <input type="checkbox" name = '<?php echo $char.$j ;?>' class="hidden" />
 	</span>
  <?php 
   if($i%8==0)
@@ -22,7 +23,6 @@
 } ?>
 </div>
 <div class = 'container'>
-
 </div>
 
 <script>
