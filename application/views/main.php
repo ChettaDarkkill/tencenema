@@ -32,8 +32,8 @@
 									<a href="index.php/booking/get_booking/<?php echo $value['id'];?>"><img src="assets/img/<?php echo $value['pic'];?>" alt=""></a>
 								</div>
 								<div class="caption">
-									<h4><?php echo $value['en_name'];?></h4>
-									<h5><?php echo $value['th_name'];?></h5>
+									<h4><?php echo $value['name_en'];?></h4>
+									<h5><?php echo $value['name_th'];?></h5>
 									<p>วันที่เข้าฉาย: <?php echo $value['date_show'];?></p>
 									<a class="btn btn-mini" href="#">» จองที่นั่ง</a>
 								</div>
