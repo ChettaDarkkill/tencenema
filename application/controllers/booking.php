@@ -25,15 +25,21 @@ class booking extends SecureController {
 	  $movies_id = $id;
 	  $user_id =  $this->session->userdata('logged_in')['id'];
 	  $booking  = $this->input->post('room');
-	  
-	  foreach ($booking as $key => $row) {
-		  $data = array(
-			   'id' 		    => '',
-			   'fk_user_id'   	=> $user_id,
-			   'fk_movies_id'   => $movies_id,
-			   'seatzone'       => $row
-		  );
-		  $this->m_booking->insert_booking($data);
+	  if($this->input->post('room'))
+	  {
+	  	  foreach ($booking as $key => $row) {
+			  $data = array(
+				   'id' 		    => '',
+				   'fk_user_id'   	=> $user_id,
+				   'fk_movies_id'   => $movies_id,
+				   'seatzone'       => $row
+			  );
+		  	 $this->m_booking->insert_booking($data);
+	      }
+	  }
+	  else
+	  {
+
 	  }
 	    $this->session->set_flashdata('show_success', 'บันทึกข้อมูลเรียบร้อย');
 	    redirect('main','refresh');
